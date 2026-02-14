@@ -5,9 +5,9 @@ module ShiftingLeft
 	output [2:0] Y
 );
 
-Multiplixer4to1 g1 (A[2], A[1], A[0], 1'b0, B, Y[2]);
-Multiplixer4to1 g2 (A[1], A[0], 1'b0, 1'b0, B, Y[1]);
-Multiplixer4to1 g3 (A[0], 1'b0, 1'b0, 1'b0, B, Y[0]);
+Multiplixer4to1 g1 (A[2], 1'b0, 1'b0, 1'b0, B, Y[2]);
+Multiplixer4to1 g2 (A[1], A[2], 1'b0, 1'b0, B, Y[1]);
+Multiplixer4to1 g3 (A[0], A[1], A[2], 1'b0, B, Y[0]);
 
 endmodule
 
@@ -19,9 +19,9 @@ module ShiftingRight
 	output [2:0] Y
 );
 
-Multiplixer4to1 g1 (A[2], 1'b0, 1'b0, 1'b0, B, Y[2]);
-Multiplixer4to1 g2 (A[1], A[2], 1'b0, 1'b0, B, Y[1]);
-Multiplixer4to1 g3 (A[0], A[1], A[2], 1'b0, B, Y[0]);
+Multiplixer4to1 g1 (A[2], A[1], A[0], 1'b0, B, Y[2]);
+Multiplixer4to1 g2 (A[1], A[0], 1'b0, 1'b0, B, Y[1]);
+Multiplixer4to1 g3 (A[0], 1'b0, 1'b0, 1'b0, B, Y[0]);
 
 endmodule
 
